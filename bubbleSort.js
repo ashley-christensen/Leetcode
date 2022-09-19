@@ -17,7 +17,7 @@
 //  return arr;
 // }
 
-// console.log(bubbleSort([3, 2, 1, 0, 4]));
+
 
 const swap = (arr, idx1, idx2) => {
  [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]];
