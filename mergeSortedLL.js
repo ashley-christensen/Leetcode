@@ -44,5 +44,5 @@ class SinglyLinkedList {
 //let DUMMY = -10000
 //let beforeNode = DUMMY
 
-//traverse, while value in L1/L2 is not NULL
+//traverse, while value in L1/L2 is not Null
 //if we run out of a list, we take remaining of other and attach
