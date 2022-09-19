@@ -38,7 +38,6 @@ function factorial2(num) {
  return total;
 }
 
-// console.log(factorial2(10));
 
 function factorial3(num) {
  if (num <= 1) {//if multiplied by 0, goes back to 0
