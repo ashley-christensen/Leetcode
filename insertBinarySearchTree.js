@@ -13,19 +13,25 @@
  */
 var insertIntoBST = function (root, val) {
  let node = new TreeNode(val);
- let current = root;
- while (current) {
-  if (current.val > val) {
-   if (current.left === null) {
-    current.left = node;
-   }
-   current = current.left;
-  }
-  if (current.val < val) {
-   if (current.right === null) {
-    current.right = node;
-   }
-   current = current.right;
+ if (!root) return node;
+
+ let cur = root;
+ let prev = null;
+ while (cur) {
+  if (val > cur.val) {
+   prev = cur;
+   cur = cur.right;
+  } else {
+   prev = cur;
+   cur = cur.left;
   }
  }
+
+ if (val < prev.val) prev.left = node;
+ else prev.right = node;
+
+ return root;
 };
+
+//Time: Log n if Tree is balanced (go to heigh of tree in worst case), if not balanced can be linear time
+//Space: O(1)
