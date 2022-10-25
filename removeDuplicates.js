@@ -12,19 +12,22 @@
 //create prev set to -Infinity before head
 //keep incrementing curr until prev and curr have different values, set prev.next to new current, space complexity is constant O(1)
 var deleteDuplicates = function (head) {
- let prev = -Infinity
- prev.next = head;
+ let dummy = new ListNode(-Infinity, head);
  let curr = head;
+ let prev = dummy;
 
- if (prev.val === curr.val) {
-  while (curr && curr.val === prev.val) {
+ while (curr) {
+  if (curr.val === prev.val) {
+   while (curr && curr.val === prev.val) {
+    curr = curr.next;
+   }
+   prev.next = curr; //remove all duplicates in while loop
+  } else {
+   prev = curr;
    curr = curr.next;
   }
-  prev.next = curr;
- } else {
-  prev = curr;
-  curr = curr.next;
-  prev.next = curr.next
  }
+ return dummy.next;
+}
 
 }
